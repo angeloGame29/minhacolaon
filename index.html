@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minha Cola — Eleições 2026 · Paraíba</title>
+<link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+<header><div><b>MINHA COLA<span class="ck">✓</span></b><small>ELEIÇÕES 2026</small></div><div>📍 Paraíba</div></header>
+<main class="pub">
+<section class="hero">
+<span class="tag">ELEIÇÕES 2026</span>
+<h1>Monte sua cola eleitoral</h1>
+<p>Pesquise os candidatos, confira os números e organize sua anotação para o dia da votação.</p>
+<svg viewBox="0 0 64 96" fill="none"><rect x="4" y="2" width="56" height="92" rx="10" fill="#fff" fill-opacity=".2" stroke="#fff" stroke-width="3"/><path d="M16 30l6 6 10-12M16 54l6 6 10-12" stroke="#FFD600" stroke-width="4" stroke-linecap="round"/><path d="M38 30h12M38 54h12" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>
+</section>
+
+<div class="steps" id="steps"><span class="on">1 Escolher</span>→<span>2 Conferir</span>→<span>3 Finalizar</span></div>
+<h2>Escolha sua cola</h2>
+<p class="sub">Pesquise pelo nome ou número da candidatura.</p>
+<div id="cards"></div>
+
+<div class="cart"><h3>SUA COLA</h3><div id="cart"></div></div>
+
+<div class="card">
+<div class="ch">Deseja receber material da campanha?</div>
+<p class="sub" style="margin:0">Escolha uma das opções e preencha seus dados abaixo.</p>
+<label class="opt"><input type="radio" name="mat" value="sim"> Sim, quero receber material</label>
+<label class="opt"><input type="radio" name="mat" value="nao"> Não, somente minha cola</label>
+<div id="addr"><div>
+<p class="sub" style="margin:14px 0 0"><b>Seus dados</b> — todos os campos são obrigatórios, exceto o complemento.</p>
+<div class="f"><label for="nome">Nome completo</label><input type="text" id="nome" placeholder="Digite seu nome completo" autocomplete="name"></div>
+<div class="f"><label for="tel">Telefone</label><input type="tel" id="tel" placeholder="(83) 99999-9999" autocomplete="tel" inputmode="tel"></div>
+<div class="two"><div class="f"><label for="cep">CEP</label><input type="text" id="cep" placeholder="00000-000" inputmode="numeric" maxlength="9"></div>
+<div class="f"><label for="num">Número</label><input type="text" id="num" placeholder="Número"></div></div>
+<div class="f"><label for="rua">Rua/Avenida</label><input type="text" id="rua" placeholder="Nome da rua"></div>
+<div class="f"><label for="comp">Complemento</label><input type="text" id="comp" placeholder="Casa, apartamento..."></div>
+<div class="two"><div class="f"><label for="bairro">Bairro</label><input type="text" id="bairro" placeholder="Seu bairro"></div>
+<div class="f"><label for="cidade">Cidade</label><input type="text" id="cidade" placeholder="Sua cidade"></div></div>
+</div></div>
+</div>
+
+<div id="err" role="alert"></div>
+<button class="go" id="go">✓ CONFIRMAR MINHA COLA</button>
+<p class="note">Seus dados de contato e endereço são usados só para identificar o pedido e entregar o material. Esta é uma versão de demonstração: nada é enviado a servidor e os candidatos listados são exemplos.</p>
+</main>
+
+<main id="admin" class="ad">
+<div class="card" style="margin-top:16px"><div class="ch">Cadastrar candidato</div>
+<select id="acargo"><option value="federal">Deputado Federal</option><option value="estadual">Deputado Estadual</option><option value="senador">Senador</option><option value="governador">Governador</option><option value="presidente">Presidente</option></select>
+<input type="text" id="anome" placeholder="Nome na urna"><input type="text" id="anum" placeholder="Número" inputmode="numeric"><input type="text" id="apart" placeholder="Partido">
+<div class="li" style="border:0"><span id="aprev"></span><button class="ph" type="button" id="afoto">📷 Escolher foto</button></div>
+<div id="aerr" style="color:#b00020;font-size:13px"></div>
+<button class="go" id="asave">Salvar candidato</button></div>
+<div class="card"><div class="ch">Candidatos cadastrados</div><div id="alist"></div></div>
+<div class="card"><div class="ch">Exportar base (JSON)</div><p class="sub">Copie para guardar ou usar no seu banco de dados.</p><textarea id="ajson" readonly></textarea>
+<button class="go sec" id="aexp">Gerar JSON</button></div>
+<p class="note">Os cadastros ficam salvos só neste navegador. Para o público ver as fotos, é preciso o banco de dados (Firebase). <a href="#">Voltar ao site</a></p>
+</main>
+<div class="modal" id="consent"><div class="box" role="dialog" aria-modal="true" aria-labelledby="ct">
+<h3 id="ct">Antes de enviar</h3><p>Confirme que você está de acordo.</p>
+<dl class="sum"><dt>O QUE VOCÊ ESTÁ ENVIANDO</dt><dd>Seu nome, telefone, endereço e os candidatos que você escolheu na sua cola.</dd>
+<dt>PARA QUÊ</dt><dd>Registrar seu pedido e entrar em contato pelo WhatsApp para a entrega do material.</dd>
+<dt>QUEM RECEBE</dt><dd>A equipe da campanha, pelo WhatsApp. Os dados não são vendidos nem usados para outra finalidade.</dd>
+<dt>SEUS DIREITOS</dt><dd>Você pode pedir correção ou exclusão dos seus dados a qualquer momento, respondendo pelo mesmo WhatsApp.</dd></dl>
+<label class="opt"><input type="checkbox" id="c1"> Confirmo que os dados são meus e estão corretos, e autorizo o uso para registrar meu pedido e receber contato.</label>
+<label class="opt"><input type="checkbox" id="c2"> Sei que a escolha de candidatos é uma informação sensível e decido enviá-la por vontade própria. Confio e quero enviar.</label>
+<button class="go" id="cok" disabled>Confirmo e quero enviar</button>
+<button class="go back" id="cback" type="button">Voltar e revisar</button></div></div>
+<div class="modal" id="modal"><div class="box" role="dialog" aria-modal="true">
+<div class="big">✓</div><h3>Pedido confirmado!</h3><p>Sua cola eleitoral foi registrada.</p>
+<dl class="sum" id="sum"></dl><a class="go wa" id="wa" target="_blank" rel="noopener">Enviar pelo WhatsApp</a></div></div>
+
+<script src="/src/js/script.js"></script>
+</body>
+</html>
