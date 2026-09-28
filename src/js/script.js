@@ -1,6 +1,6 @@
 // ---- BASE DE CANDIDATOS (exemplos — substituir pelos dados oficiais) ----
 let candidatos=[
-{nome:"Daniel Conhece",numero:"2266",partido:"—",cargo:"federal",foto:"/src/imgs/danielConhece.png"},
+{nome:"Daniel Conhece",numero:"2266",partido:"PL",cargo:"federal",foto:"/src/imgs/danielConhece.png"},
   {nome:"Adriano Galdino",numero:"10444",partido:"REPUBLICANOS",cargo:"estadual",foto:"fotos/estadual-10444.jpg"},
     {nome:"Alan de Bastos",numero:"22622",partido:"PL",cargo:"estadual",foto:"fotos/estadual-22622.jpg"},
     {nome:"Aldenora Bezerra",numero:"40040",partido:"PSB",cargo:"estadual",foto:"fotos/estadual-40040.jpg"},
