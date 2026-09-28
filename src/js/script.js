@@ -229,7 +229,7 @@ let candidatos=[
 
 ];
 try{const st=JSON.parse(localStorage.getItem("cand2026")||"null");if(Array.isArray(st))candidatos=st}catch(_){}
-const WHATS_DESTINO=""; // número que recebe os pedidos, com DDI+DDD, ex.: 5583999999999 (vazio = a pessoa escolhe o contato)
+const WHATS_DESTINO="558394113691"; // número que recebe os pedidos, com DDI+DDD, ex.: 5583999999999 (vazio = a pessoa escolhe o contato)
 const SHEETS_URL="https://script.google.com/macros/s/AKfycbw_2NdQXiWhMHu4jFYRoVwkl81MPFRE6nFVkhsNGIpl9Izsl4cZ9G_qYssuq3VZjZ5xXQ/exec";   // URL do app da Planilha Google (termina em /exec). Vazio = não envia
 const SHEETS_TOKEN="troque-este-codigo"; // igual ao TOKEN do google-apps-script.gs
 let pendente=null;
