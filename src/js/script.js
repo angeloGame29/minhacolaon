@@ -222,10 +222,10 @@ let candidatos=[
     {nome:"Veterinário Wilson Grassi",numero:"35",partido:"DEMOCRATA",cargo:"presidente",foto:"fotos/presidente-35.jpg"},
     {nome:"Zema",numero:"30",partido:"NOVO",cargo:"presidente",foto:"fotos/presidente-30.jpg"},
 
-    {nome:"VOTO NULO",numero:"NULO",partido:"SLA",cargo:"presidente",foto:"/src/imgs/istockphoto-1370544962-612x612.jpg"},
-    {nome:"VOTO NULO",numero:"NULO",partido:"SLA",cargo:"governador",foto:"/src/imgs/istockphoto-1370544962-612x612.jpg"},
-    {nome:"VOTO NULO",numero:"NULO",partido:"SLA",cargo:"senador",foto:"/src/imgs/istockphoto-1370544962-612x612.jpg"},
-    {nome:"VOTO NULO",numero:"NULO",partido:"SLA",cargo:"estadual",foto:"/src/imgs/istockphoto-1370544962-612x612.jpg"}
+    {nome:"VOTO EM BRANCO",numero:"NULO",partido:"SLA",cargo:"presidente",foto:"/src/imgs/istockphoto-1370544962-612x612.jpg"},
+    {nome:"VOTO EM BRANCO",numero:"NULO",partido:"SLA",cargo:"governador",foto:"/src/imgs/istockphoto-1370544962-612x612.jpg"},
+    {nome:"VOTO EM BRANCO",numero:"NULO",partido:"SLA",cargo:"senador",foto:"/src/imgs/istockphoto-1370544962-612x612.jpg"},
+    {nome:"VOTO EM BRANCO",numero:"NULO",partido:"SLA",cargo:"estadual",foto:"/src/imgs/istockphoto-1370544962-612x612.jpg"}
 
 ];
 try{const st=JSON.parse(localStorage.getItem("cand2026")||"null");if(Array.isArray(st))candidatos=st}catch(_){}
